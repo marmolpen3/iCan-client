@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+.bg-blue {
+  background-color: #5443f11b!important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.border-purple {
+  border: 2px solid #851ff8!important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.text-purple {
+  color: #851ff8!important;
+}
+
+.btn:hover {
+  background-color: #5443f15f!important;
+  border-color:  #6a17c8!important;
+  color: #6a17c8!important;
+}
+
+.form-control:focus, select:focus, input:focus{
+  color: #081a7a !important;
+  border-color: #e1bee7b8 !important;
+  box-shadow: 0 0 0 0.25rem #9575cde8 !important;
+}
+
+.header-logo {
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+    .header-logo {
+        width: 60%;
+    }
+    
+    .header-perfil {
+      width: 70%;
+    }
+}
+
+@media (min-width: 992px) {
+  .header-logo {
+      width: 40%;
+  }
+
+  .header-perfil {
+    width: 40%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.reportDetails {
+  border: 2px solid #851ff8 !important;
+  border-radius: 8px !important;
+  margin-bottom: 1em!important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)!important;
 }
 
-.App-link {
-  color: #61dafb;
+.reportCard {
+  border: 2px solid #5343f1!important;
+  border-radius: 10px!important;
+  margin-bottom: 1em!important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)!important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottomBorder {
+  border-bottom: 2px solid #851ff8 !important;
+}
+
+.topBorder {
+  border-top: 2px solid #851ff8 !important;
+}
+
+.darkBlueText {
+  color: #5343f1 !important;
+}
+
+.darkBlueText:hover {
+  color: #851ff8 !important;
+}
+
+.bgBlue {
+  background-color: #eae7ff6e!important;
+}
+
+.bgGreen {
+  background-color: #c6fcc97c;
+}
+
+.hGreen {
+  background-color: #59de60dc;
+}
+
+.bgYellow {
+  background-color: #f9fcc672;
+}
+
+.hYellow {
+  background-color: #f6ff71;
+}
+
+.bgRed {
+  background-color: #fccfc672;
+}
+
+.hRed {
+  background-color: #ff8471;
 }
