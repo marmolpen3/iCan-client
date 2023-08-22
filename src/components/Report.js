@@ -47,13 +47,13 @@ const Report = () => {
 
     return (
         <Fragment>
-            <div className="row my-2 pb-5">
-                <div className="col-12">
+            <div className="row pb-5">
+                {/* <div className="col-12">
                     <h2 className="text-center">{report.name} details</h2>
-                </div>
+                </div> */}
                 {report.obligations_actors?.length == 0 ?
-                    <div className="col-11 mb-1 text-end">
-                        <button type="button" className="btn border-purple text-purple bg-blue mt-4"
+                    <div className="col-12 col-md-11 mb-2 text-end">
+                        <button type="button" className="btn border-purple text-purple bg-blue mt-2"
                             onClick={() => getActors(report._id)}>
                             Get Actors
                         </button>

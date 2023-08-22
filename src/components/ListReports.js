@@ -48,8 +48,11 @@ const ListReports = () => {
                                         <p className="card-text">Rights {value.rights?.length}</p>
                                     </div>
                                     <div className="pt-3 text-center">
-                                        <Link to={`/${value._id}`}>
-                                            <i class="bi bi-hammer"></i>
+                                        <Link className="pe-1 darkBlueText" to={`/${value._id}`}>
+                                        <i class="bi bi-plus-square-fill"></i>                                       
+                                        </Link>
+                                        <Link className="ps-1 darkBlueText">
+                                        <i class="bi bi-trash3-fill"></i>
                                         </Link>
                                     </div>
                                 </div>
