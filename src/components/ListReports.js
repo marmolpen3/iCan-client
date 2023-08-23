@@ -26,6 +26,22 @@ const ListReports = () => {
         getAllReports();
     }, []);
 
+    async function deleteReport(reportId) {
+        const request = new Request(`/api/v1/reports/${reportId}`, {
+            method: "DELETE"
+        });
+
+        const response = await fetch(request);
+
+        if (!response.ok) {
+            throw Error("Failed to delete report. " + response.status);
+        }
+
+        const updatedReports = Object.values(reports).filter(report => report._id !== reportId);
+        setReports(updatedReports);
+    }
+
+
     return (
         <Fragment>
             <div className="row my-2 pb-5">
@@ -49,10 +65,10 @@ const ListReports = () => {
                                     </div>
                                     <div className="pt-3 text-center">
                                         <Link className="pe-1 darkBlueText" to={`/${value._id}`}>
-                                        <i class="bi bi-plus-square-fill"></i>                                       
+                                            <i class="bi bi-plus-square-fill"></i>
                                         </Link>
-                                        <Link className="ps-1 darkBlueText">
-                                        <i class="bi bi-trash3-fill"></i>
+                                        <Link className="ps-1 darkBlueText" onClick={() => deleteReport(value._id)}>
+                                            <i class="bi bi-trash3-fill"></i>
                                         </Link>
                                     </div>
                                 </div>
@@ -60,7 +76,6 @@ const ListReports = () => {
                         </div>
                     </div>
                 ))}
-
             </div>
         </Fragment>
     );
