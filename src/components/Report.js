@@ -29,7 +29,7 @@ const Report = () => {
     }, [reportId]);
 
     async function getActors(reportId) {
-        const request = new Request("/api/v1/roles/" + reportId, {
+        const request = new Request("/api/v1/reports/" + reportId + "/roles", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
