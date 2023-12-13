@@ -20,7 +20,7 @@ const Report = () => {
             }
 
             const report = await response.json();
-            console.log(report);
+            console.log(report)
             setReport(report);
         };
 
@@ -42,7 +42,7 @@ const Report = () => {
             throw Error("Response not valid. " + response.status);
         }
         const actors = await response.json();
-        console.log(actors);
+        console.log(actors)
     };
 
     return (
