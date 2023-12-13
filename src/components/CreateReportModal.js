@@ -19,7 +19,7 @@ function CreateReportModal() {
                 data.pdfFile = base64PDF;
 
                 try {
-                    const response = await fetch('/api/v1/predictions', {
+                    const response = await fetch('/api/v1/reports', {
                         method: 'POST',
                         headers: {
                             "Content-Type": "application/json"
@@ -40,7 +40,7 @@ function CreateReportModal() {
             reader.readAsDataURL(pdfFile); 
         } else {
             try {
-                const response = await fetch('/api/v1/predictions', {
+                const response = await fetch('/api/v1/reports', {
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json"
