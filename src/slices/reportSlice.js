@@ -13,7 +13,6 @@ export const reportSlice = createSlice({
       state.reportList = action.payload;
     },
     addReport: (state, action) => {
-      console.log(Object.values(state.reportList))
       state.reportList.unshift(action.payload);
     },
     setValidationErrors: (state, action) => {

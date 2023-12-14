@@ -68,7 +68,7 @@ const ListReports = () => {
                                             </div>
                                             <div className="pt-3 text-center">
                                                 <Link className="pe-1 darkBlueText" to={`/${report._id}`}>
-                                                    <i class="bi bi-plus-square-fill"></i>
+                                                    <i className="bi bi-plus-square-fill"></i>
                                                 </Link>
                                                 <Link className="ps-1 darkBlueText" onClick={() => deleteReport(report._id)}>
                                                     <i className="bi bi-trash3-fill"></i>
