@@ -1,11 +1,13 @@
 import React from "react";
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import { setReportList, setValidationErrors } from "../slices/reportSlice";
 import CreateReportModal from "./CreateReportModal";
 
 const ListReports = () => {
-    const [reports, setReports] = useState([]);
+    const dispatch = useDispatch();
+    const reportState = useSelector((state) => state.report);
 
     useEffect(() => {
         async function getAllReports() {
@@ -20,7 +22,7 @@ const ListReports = () => {
             }
 
             const reports = await response.json();
-            setReports(reports);
+            dispatch(setReportList(reports.reverse()));
         }
 
         getAllReports();
@@ -37,10 +39,9 @@ const ListReports = () => {
             throw Error("Failed to delete report. " + response.status);
         }
 
-        const updatedReports = Object.values(reports).filter(report => report._id !== reportId);
-        setReports(updatedReports);
+        const updatedReports = Object.values(reportState.reportList).filter(report => report._id !== reportId);
+        dispatch(setReportList(updatedReports.reverse()));
     }
-
 
     return (
         <Fragment>
@@ -52,30 +53,34 @@ const ListReports = () => {
                     <a className="darkBlueText" href="#create" data-bs-toggle="modal" data-bs-target="#analyzeAgreement"><i className="bi bi-plus-circle h1"></i></a>
                 </div>
                 <CreateReportModal />
-
-                {Object.values(reports).map((value, clave) => (
-                    <div key={clave} className="col-12 col-md-4">
-                        <div className="card reportCard">
-                            <div className="rounded">
-                                <div className="card-body text-center m-3">
-                                    <h5 className="card-title">{value.name?.toUpperCase()}</h5>
-                                    <div className="mb-2 mt-4">
-                                        <p className="card-text">Obligations {value.obligations?.length}</p>
-                                        <p className="card-text">Rights {value.rights?.length}</p>
-                                    </div>
-                                    <div className="pt-3 text-center">
-                                        <Link className="pe-1 darkBlueText" to={`/${value._id}`}>
-                                            <i class="bi bi-plus-square-fill"></i>
-                                        </Link>
-                                        <Link className="ps-1 darkBlueText" onClick={() => deleteReport(value._id)}>
-                                            <i class="bi bi-trash3-fill"></i>
-                                        </Link>
+                {reportState.reportList.length === 0 ?
+                    (<div className="text-center">No agreements available</div>) :
+                    (reportState.reportList.map((report) => {
+                        return (
+                            <div key={report._id} className="col-12 col-md-4">
+                                <div className="card reportCard">
+                                    <div className="rounded">
+                                        <div className="card-body text-center m-3">
+                                            <h5 className="card-title">{report.name?.toUpperCase()}</h5>
+                                            <div className="mb-2 mt-4">
+                                                <p className="card-text">Obligations {report.obligations?.length}</p>
+                                                <p className="card-text">Rights {report.rights?.length}</p>
+                                            </div>
+                                            <div className="pt-3 text-center">
+                                                <Link className="pe-1 darkBlueText" to={`/${report._id}`}>
+                                                    <i className="bi bi-plus-square-fill"></i>
+                                                </Link>
+                                                <Link className="ps-1 darkBlueText" onClick={() => deleteReport(report._id)}>
+                                                    <i className="bi bi-trash3-fill"></i>
+                                                </Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                ))}
+                        );
+                    }))
+                }
             </div>
         </Fragment>
     );

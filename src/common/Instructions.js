@@ -18,7 +18,7 @@ function Instructions() {
                     </ol>
                     <div className="mt-4 pt-2">
                         <h2 className="mb-3">Categories:</h2>
-                        <table class="table"><thead>
+                        <table className="table"><thead>
                             <tr>
                                 <th scope="col">Number</th>
                                 <th scope="col">Category</th>
@@ -26,17 +26,17 @@ function Instructions() {
                             </tr>
                         </thead>
                             <tbody>
-                                <tr class="table-danger">
+                                <tr className="table-danger">
                                     <th scope="row">0</th>
                                     <td>Obligation</td>
                                     <td>Promise, acknowledgment, or agreement (as a contract) that binds one to a specific performance (as payment).</td>
                                 </tr>
-                                <tr class="table-success">
+                                <tr className="table-success">
                                     <th scope="row">1</th>
                                     <td>Right</td>
                                     <td>Something to which one has a just claim.</td>
                                 </tr>
-                                <tr class="table-warning">
+                                <tr className="table-warning">
                                     <th scope="row">2</th>
                                     <td>Neither</td>
                                     <td>Sentences that do not indicate obligation or right, they are merely informative or conditional.</td>
@@ -54,18 +54,18 @@ function Instructions() {
                         </ol>
                         <p>The first step in determining whether a sentence is an obligation or a right is to identify whether it expresses an action. To do this, it is necessary to observe whether what is stated in the clause involves activity performed by a person. In that case, to determine the category to which it belongs, we can pay attention to the verb used in the clause, especially if it includes a modal verb, as proposed in other approaches studied. Modal verbs, expressing obligation, right, future, possibility or promise:</p>
 
-                        <table class="table"><thead>
+                        <table className="table"><thead>
                             <tr>
                                 <th scope="col">Category</th>
                                 <th scope="col">Possibilities</th>
                             </tr>
                         </thead>
                             <tbody>
-                                <tr class="table-danger">
+                                <tr className="table-danger">
                                     <td>Obligation</td>
                                     <td>Should, must, cannot, can only be used to</td>
                                 </tr>
-                                <tr class="table-success">
+                                <tr className="table-success">
                                     <td>Right</td>
                                     <td>To be eligible to recive, will be entitled to, have the right to </td>
                                 </tr>
@@ -82,7 +82,7 @@ function Instructions() {
                         <p>The following tables will present in detail the situations we have addressed and the decisions we have made. Specifically, the circumstances will be presented from both points of view, together with their respective assigned categories.</p>
 
                         <h4 className="my-3 pt-4">Provider obligations</h4>
-                        <table class="table table-striped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">Concept</th>
@@ -90,7 +90,7 @@ function Instructions() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Provision of services at expected performance
                                     </td>
@@ -100,7 +100,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Everything related to the delivery of the financial compensation (review, delivery time, etc.).                                                </td>
                                     <td>
@@ -110,7 +110,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Availability of technical support for the notification of an incident
                                     </td>
@@ -121,7 +121,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Notification of changes in the agreement
                                     </td>
@@ -131,7 +131,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Provide data control assistance in a timely manner.
                                     </td>
@@ -141,7 +141,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Manage system outages.
                                     </td>
@@ -156,7 +156,7 @@ function Instructions() {
 
                         <h4 className="my-3 pt-4">Provider rights</h4>
 
-                        <table class="table table-striped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">Concept</th>
@@ -164,7 +164,7 @@ function Instructions() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Actions related to the delivery of compensation or limitations that give control to the provider.                                    </td>
                                     <td>
@@ -175,7 +175,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Modifying the agreement or the services offered.
                                     </td>
@@ -190,7 +190,7 @@ function Instructions() {
 
                         <h4 className="my-3 pt-4">Customer obligations</h4>
 
-                        <table class="table table-striped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">Concept</th>
@@ -198,7 +198,7 @@ function Instructions() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Payment and use of the services indicated in the applicable policy.
                                     </td>
@@ -209,7 +209,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Maintain and protect data and service settings.
                                     </td>
@@ -219,7 +219,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Claim for non-compliance.
                                     </td>
@@ -235,7 +235,7 @@ function Instructions() {
 
                         <h4 className="my-3 pt-4">Customer rights</h4>
 
-                        <table class="table table-striped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">Concept</th>
@@ -243,7 +243,7 @@ function Instructions() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                         Receive financial compensation.
                                     </td>
@@ -255,7 +255,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                     Receive timely assistance.
                                     </td>
@@ -267,7 +267,7 @@ function Instructions() {
                                         </ol>
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr className="">
                                     <td>
                                     Terminate subscription
                                     </td>
