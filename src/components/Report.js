@@ -74,7 +74,7 @@ const Report = () => {
                         </div>
                         <div className="rounded-bottom topBorder">
                             <div className="card-footer text-muted bg-transparent">
-                                <table class="table">
+                                <table className="table">
                                     <thead>
                                         <tr>
                                             <th scope="col">Sentence</th>

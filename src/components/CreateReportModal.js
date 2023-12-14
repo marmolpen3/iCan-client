@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux";
+import { addReport, setValidationErrors } from "../slices/reportSlice";
 import React, { useState } from 'react';
 
 function CreateReportModal() {
+    const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [paragraph, setParagraph] = useState('');
     const [pdfFile, setPdfFile] = useState(null);
@@ -8,7 +11,7 @@ function CreateReportModal() {
     async function createReport() {
         const data = {
             "name": name,
-            "paragraph": paragraph, 
+            "paragraph": paragraph,
             "pdfFile": ""
         };
 
@@ -28,16 +31,18 @@ function CreateReportModal() {
                     });
 
                     if (!response.ok) {
+                        dispatch(setValidationErrors(true));
                         throw Error('Response not valid. ' + response.status);
                     }
 
                     const report = await response.json();
-                    console.log(report);
+                    dispatch(setValidationErrors(false));
+                    dispatch(addReport(report));
                 } catch (error) {
                     console.error('Error sending request:', error);
                 }
             };
-            reader.readAsDataURL(pdfFile); 
+            reader.readAsDataURL(pdfFile);
         } else {
             try {
                 const response = await fetch('/api/v1/reports', {
@@ -49,11 +54,13 @@ function CreateReportModal() {
                 });
 
                 if (!response.ok) {
+                    dispatch(setValidationErrors(true));
                     throw Error('Response not valid. ' + response.status);
                 }
 
                 const report = await response.json();
-                console.log(report);
+                dispatch(setValidationErrors(false));
+                dispatch(addReport(report));
             } catch (error) {
                 console.error('Error sending request:', error);
             }
